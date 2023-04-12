@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+
+$display-font-sizes: (
+  1: 5rem,
+  2: 4.5rem,
+  3: 4rem,
+  4: 3.5rem,
+  5: 3rem,
+  6: 2.5rem
+);
+
+$enable-negative-margins: true;
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+body{
+  font-family: 'Montserrat', sans-serif;
+    margin: 0;
+  padding: 0;
+}
+
+.splash-page{
+  width: max-content;
+  z-index: 2;
+}
+
+.second-div{
+  position: absolute;
+  top: 0;
+  left: 50;
+  opacity: 0;
+    transform: translateX(0);
+ transition: top 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.third-div{
+  position: absolute;
+  top: 0;
+  left: 50;
+  opacity: 0;
+  transform: translateX(0);
+ transition: top 0.3s ease-in-out, transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.clicked{
+  display: none !important;
+}
+
+.weatherCard{
+    width: 18rem;
+    height: 24rem;
+    background-color: white;
+    z-index: 1;
+}
+
+// .weatherCard:hover{
+// 	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+// 	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
+// }
+
+// .cardContainer{
+//   width: max-content;
+// }
+
+.weatherCard .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.forecastCard{
+    width: 18rem;
+    height: 24rem;
+    background: black;
+}
+
+.forecastSquare{
+  height: content;
+  width: 3rem;
+  transition: ease 200ms;
+}
+
+.forecastSquare:hover{
+  background-color: rgb(112, 112, 112) !important;
+  transform: scale(1.05);
+}
+
+#condition-icon{
+  width:4rem;
+  height: 4rem;
+}
+
+.weatherCard #condition-icon{
+  width: 6rem;
+  height: 6rem;
+}
+
+.changeBtn{
+  height: 2.5rem;
+  overflow: hidden;
+  transition: ease .5s;
+  // stops text from stacking during transition
+  white-space: nowrap;
+}
+
+.changeBtn span{
+  display: none;
+}
+
+.changeBtn:hover{
+  width: 75% !important;
+}
+
+.changeBtn:hover span{
+display: inline-block;
+}
+
+//small screens
+@media (max-width: 575px){
+.show {
+  top: 17rem; /* adjust this value as needed to position the second-div correctly */
+  opacity: 1;
+  z-index: 3;
+}
+.show ~ .third-div {
+  opacity: 1;
+  margin-top: 2rem !important;
+}
+
+.weatherStats{
+  display: none;
+}
+
+.weatherCard{
+  height: 20rem;
+}
+.weatherCardBottom{
+  margin-bottom: 4rem !important;
+}
+.forecastCard{
+  z-index: 1;
+  height: 15rem;
+  width: 20rem;
+}
+.changeBtn{
+  margin-bottom: 1rem !important;
+}
+}
+
+//large screens
+@media (min-width: 576px) {
+  .show {
+    opacity: 1;
+    transform: translateX(50%);
+  }
+  .show ~ .third-div {
+transform: translateX(-50%);
+opacity: 1;
+}
+.weatherCard #condition-icon{
+  margin-bottom: 1rem;
+}
+}
+
+
+
+
+
+.gradient-day{
+background: #2BC0E4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.gradient-night{
+background: hsla(271, 90%, 70%, 1);
+
+background: linear-gradient(315deg, hsla(271, 90%, 70%, 1) 10%, hsla(185, 90%, 62%, 1) 100%);
+
+background: -moz-linear-gradient(315deg, hsla(271, 90%, 70%, 1) 10%, hsla(185, 90%, 62%, 1) 100%);
+
+background: -webkit-linear-gradient(315deg, hsla(271, 90%, 70%, 1) 10%, hsla(185, 90%, 62%, 1) 100%);
+}
