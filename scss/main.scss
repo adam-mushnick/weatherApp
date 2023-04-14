@@ -51,12 +51,8 @@ body{
     height: 24rem;
     background-color: white;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
 }
-
-// .weatherCard:hover{
-// 	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
-// 	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
-// }
 
 // .cardContainer{
 //   width: max-content;
@@ -119,7 +115,7 @@ display: inline-block;
 //small screens
 @media (max-width: 575px){
 .show {
-  top: 17rem; /* adjust this value as needed to position the second-div correctly */
+  top: 20rem; /* adjust this value as needed to position the second-div correctly */
   opacity: 1;
   z-index: 3;
 }
@@ -160,6 +156,10 @@ opacity: 1;
 }
 .weatherCard #condition-icon{
   margin-bottom: 1rem;
+}
+.weatherCard:hover{
+	-webkit-transform: scale(1.1) perspective(1500px) rotateY(10deg);
+	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
 }
 }
 
