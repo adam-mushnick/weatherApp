@@ -35,7 +35,7 @@ form.addEventListener('submit', async (e) => {
   const config = { params: { key: key, q: location, days: 10 } };
   //axios makes api fetch requests
   const res = await axios.get(
-    `http://api.weatherapi.com/v1/forecast.json`,
+    `https://api.weatherapi.com/v1/forecast.json`,
     config
   );
   console.log(res.data);
