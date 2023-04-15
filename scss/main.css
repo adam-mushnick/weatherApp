@@ -11506,6 +11506,10 @@ body {
   z-index: 2;
 }
 
+.splash-page .splash-icon {
+  scale: 1.5;
+}
+
 .second-div {
   position: absolute;
   top: 0;

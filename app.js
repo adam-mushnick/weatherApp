@@ -18,19 +18,8 @@ const splashPage = document.querySelector('.splash-page');
 const secondDiv = document.querySelector('.second-div');
 const thirdDiv = document.querySelector('.third-div');
 
-// splashPage.addEventListener('click', () => {
-//   secondDiv.classList.toggle('show');
-//   splashPage.classList.toggle('clicked');
-//   thirdDiv.classList.toggle('show-me');
-// });
-
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  //show cards
-  secondDiv.classList.toggle('show');
-  splashPage.classList.toggle('clicked');
-  thirdDiv.classList.toggle('show-me');
-
   const location = form.elements.query.value;
   const config = { params: { key: key, q: location, days: 10 } };
   //axios makes api fetch requests
@@ -51,15 +40,15 @@ form.addEventListener('submit', async (e) => {
     res.data.forecast.forecastday[2].date
   );
   cityName.innerHTML = res.data.location.name;
+  temperature[3].innerHTML = `${res.data.current.temp_f} °F`;
   temperature[0].innerHTML = `${res.data.current.temp_f} °F`;
-  temperature[1].innerHTML = `${res.data.current.temp_f} °F`;
-  temperature[2].innerHTML = `${res.data.forecast.forecastday[1].day.maxtemp_f} °F`;
-  temperature[3].innerHTML = `${res.data.forecast.forecastday[2].day.maxtemp_f} °F`;
+  temperature[1].innerHTML = `${res.data.forecast.forecastday[1].day.maxtemp_f} °F`;
+  temperature[2].innerHTML = `${res.data.forecast.forecastday[2].day.maxtemp_f} °F`;
   condition.innerHTML = res.data.current.condition.text;
+  conditionIcon[3].src = res.data.current.condition.icon;
   conditionIcon[0].src = res.data.current.condition.icon;
-  conditionIcon[1].src = res.data.current.condition.icon;
-  conditionIcon[2].src = res.data.forecast.forecastday[1].day.condition.icon;
-  conditionIcon[3].src = res.data.forecast.forecastday[2].day.condition.icon;
+  conditionIcon[1].src = res.data.forecast.forecastday[1].day.condition.icon;
+  conditionIcon[2].src = res.data.forecast.forecastday[2].day.condition.icon;
   precipitation.innerHTML = `${res.data.current.precip_in} in`;
   humidity.innerHTML = `${res.data.current.humidity}%`;
   wind.innerHTML = `${res.data.current.wind_mph} mi/hr`;
@@ -73,7 +62,9 @@ form.addEventListener('submit', async (e) => {
   }
 
   form.elements.query.value = '';
-  // form.style.display = 'none';
+  //show cards
+  secondDiv.classList.toggle('show');
+  splashPage.classList.toggle('clicked');
 });
 
 //get date from epoch (# of seconds since Jan 1st 1970)

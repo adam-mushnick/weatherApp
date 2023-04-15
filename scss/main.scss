@@ -24,6 +24,10 @@ body{
   z-index: 2;
 }
 
+.splash-page .splash-icon{
+  scale: 1.5;
+}
+
 .second-div{
   position: absolute;
   top: 0;
@@ -53,10 +57,6 @@ body{
     z-index: 1;
     transition: transform 0.3s ease-in-out;
 }
-
-// .cardContainer{
-//   width: max-content;
-// }
 
 .weatherCard .container {
   display: flex;
@@ -162,10 +162,6 @@ opacity: 1;
 	        transform: scale(1.1) perspective(1500px) rotateY(10deg);
 }
 }
-
-
-
-
 
 .gradient-day{
 background: #2BC0E4;  /* fallback for old browsers */

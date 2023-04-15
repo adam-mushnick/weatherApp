@@ -17,15 +17,22 @@
 
 <body class="bg-dark">
     <div class="container d-flex justify-content-center align-items-center">
-        <div class="splash-page d-flex align-items-center justify-content-center position-relative mt-5">
-            <div class="container searchContainer my-5">
-                <form action="" id="searchForm">
-                    <div class="mx-5">
-                        <input type="text" class="form-control" placeholder="search for city" name="query" autofocus>
-                    </div>
-                </form>
+        <div
+            class="splash-page gradient-day rounded-4 align-items-center justify-content-center position-relative mt-5">
+            <div class="d-flex align-items-center">
+                <img class="splash-icon" src="/public/amcharts_weather_icons_1.0.0/animated/cloudy-day-3.svg"
+                    alt="weather icon">
+                <div class="container searchContainer">
+                    <form action="" id="searchForm">
+                        <div class="input-group">
+                            <input class="form-control" type="search" placeholder="search for city" name="query"
+                                autofocus>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
         <div class="second-div mt-5">
             <div class="forecastCard forecastCard-md shadow px-3 pt-4 text-white rounded-4 position-relative">
                 <div class="container">
@@ -113,7 +120,8 @@
                             <h1 class="fw-bolder" id="temperature">Temp</h1>
                         </div>
                         <div class="col-sm-12 col-5">
-                            <h4 class="" id="condition">Condition</h4>
+                            <h4 class="py-1 d-flex justify-content-center align-items-center" id="condition">Condition
+                            </h4>
                         </div>
                     </div>
                 </div>
