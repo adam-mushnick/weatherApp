@@ -11504,6 +11504,7 @@ body {
 .splash-page {
   width: max-content;
   z-index: 2;
+  top: 10rem;
 }
 
 .splash-page .splash-icon {
